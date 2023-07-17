@@ -41,7 +41,7 @@ class Trie{
             return;
         }
         
-        int index = word[0] - 'A';      // assume word is ALL CAPS
+        int index = word[0] - 'a';
         TrieNode* child;
 
         // if present
@@ -64,7 +64,7 @@ class Trie{
             return root->isTerminal;
         }
 
-        int index = word[0] - 'A';
+        int index = word[0] - 'a';
         TrieNode* child;
 
         // char present
@@ -77,7 +77,7 @@ class Trie{
         return searchUtil(child, word.substr(1));
     }
 
-    void insertWord(string word){
+    void insert(string word){
         insertUtil(root, word);
     }
 
@@ -90,12 +90,6 @@ class Trie{
 int main()  
 { 
     Trie *t = new Trie();
-    t->insertWord("ABCD");
-    t->insertWord("ADITYA");
-    t->insertWord("ADI");
-
-    cout<<t->search("ABC")<<endl;
-    cout<<t->search("ADITYA")<<endl;
-    cout<<t->search("ADI")<<endl;
+    
     return 0;
 }
